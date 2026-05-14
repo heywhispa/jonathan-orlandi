@@ -1,21 +1,13 @@
 import type { Metadata } from 'next'
-import { Syne, DM_Sans } from 'next/font/google'
+import { DM_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
 import './globals.css'
 
-const syne = Syne({
-  subsets: ["latin"],
-  variable: "--font-syne",
-  weight: ["700", "800"],
-  display: "optional",
-  preload: true,
-  fallback: ["system-ui", "Arial", "sans-serif"],
-})
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
-  weight: ["300", "400"],
+  weight: ["300", "400", "700", "800"],
   display: "optional",
   preload: true,
   fallback: ["system-ui", "Arial", "sans-serif"],
@@ -50,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className={`${syne.variable} ${dmSans.variable}`}>
+    <html lang="pt-BR" className={dmSans.variable}>
       <head>
         {/* Preconnect para recursos críticos de terceiros */}
         <link rel="preconnect" href="https://scripts.converteai.net" crossOrigin="anonymous" />

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 
-const pages = ["/", "/v02", "/v02b", "/v03", "/v03b", "/v04", "/v05", "/v05b", "/v06", "/v07", "/v08"]
+const pages = ["/v03", "/v07"]
 
 export async function GET(request: NextRequest) {
   const index = Math.floor(Math.random() * pages.length)
